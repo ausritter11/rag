@@ -29,7 +29,7 @@ st.set_page_config(
 )
 
 # App title and description
-st.title("💬 Hytopia Insights")
+st.title("💬 Specific Insights")
 st.markdown("Upload documents and ask questions to get AI-powered answers!")
 
 # Initialize session state
