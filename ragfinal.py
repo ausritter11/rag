@@ -382,12 +382,23 @@ Your writing must strictly follow the tone, formatting, and topic preferences ou
 
 ---
 
-📌 Reminder: Whenever you use general knowledge, pretraining data, or web-scale info not explicitly provided in Denarii Labs data, indicate it clearly in your response...\n\nContext:\n{docs_content}\n\nQuestion:\n{state['question']}\n\nAnswer:"},
-                            {"type": "human", "content": state["question"]}
-                        ]
-                        response = llm.invoke(messages)
-                        return {"answer": response.content}
+📌 Reminder: Whenever you use general knowledge, pretraining data, or web-scale info not explicitly provided in Denarii Labs data, indicate it clearly in your response...
 
+Context:
+{context}
+
+Question:
+{question}
+
+Answer:
+""".strip()
+
+    messages = [
+        {"type": "system", "content": system_content.format(context=docs_content, question=state['question'])},
+        {"type": "human", "content": state["question"]}
+    ]
+    response = llm.invoke(messages)
+    return {"answer": response.content}
 
                     # Build the graph
                     graph_builder = StateGraph(State).add_sequence([retrieve, generate])
