@@ -382,7 +382,7 @@ Your writing must strictly follow the tone, formatting, and topic preferences ou
 
 ---
 
-📌 Reminder: Whenever you use general knowledge, pretraining data, or web-scale info not explicitly provided in Denarii Labs data, indicate it clearly in your response...
+📌 Reminder: Whenever you use general knowledge, pretraining data, or web-scale info not explicitly provided in Denarii Labs data, indicate it clearly in your response...}
 
 Context:
 {context}
